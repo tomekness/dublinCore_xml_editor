@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dublin Core XML Editor</title>
+    <style>
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="fileInput" accept=".xml">
+    <button onclick="loadXML()">Load XML</button>
+
+    <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title">
+    </div>
+
+    <div>
+        <label for="creator">Creator:</label>
+        <input type="text" id="creator">
+    </div>
+
+    <div>
+        <label for="contributor">Contributor:</label>
+        <input type="text" id="contributor">
+    </div>
+
+    <div>
+        <label for="date">Date:</label>
+        <input type="text" id="date">
+    </div>
+
+    <div>
+        <label for="relation">Relation:</label>
+        <input type="text" id="relation">
+    </div>
+
+    <div>
+        <label for="language">Language:</label>
+        <input type="text" id="language">
+    </div>
+
+    <div>
+        <label for="source">Source:</label>
+        <input type="text" id="source">
+    </div>
+
+    <div>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject">
+    </div>
+
+    <div>
+        <label for="description">Description:</label>
+        <textarea id="description" rows="4" cols="50"></textarea>
+    </div>
+
+    <div>
+        <label for="publisher">Publisher:</label>
+        <input type="text" id="publisher">
+    </div>
+
+    <div>
+        <label for="rights">Rights:</label>
+        <input type="text" id="rights">
+    </div>
+
+    <div>
+        <label for="type">Type:</label>
+        <input type="text" id="type">
+    </div>
+
+    <div>
+        <label for="format">Format:</label>
+        <input type="text" id="format">
+    </div>
+
+    <div>
+        <label for="coverage">Coverage:</label>
+        <input type="text" id="coverage">
+    </div>
+
+    <div>
+        <label for="identifier">Identifier:</label>
+        <input type="text" id="identifier">
+    </div>
+
+    <button onclick="editXML()">Edit XML</button>
+    <button onclick="saveXML()">Save XML</button>
+
+    <div>
+        <textarea id="xmlTextarea" rows="20" cols="80"></textarea>
+    </div>
+
+    <script>
+        let xmlDoc;
+
+        function loadXML() {
+            const fileInput = document.getElementById('fileInput');
+            const xmlTextarea = document.getElementById('xmlTextarea');
+
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const xmlContent = e.target.result;
+                    xmlDoc = new DOMParser().parseFromString(xmlContent, 'application/xml');
+
+                    console.log(xmlDoc.children[0].children[0]);
+
+                    populateField('title');
+                    populateField('creator');
+                    populateField('contributor');
+                    populateField('date');
+                    populateField('relation');
+                    populateField('language');
+                    populateField('source');
+                    populateField('subject');
+                    populateField('description');
+                    populateField('publisher');
+                    populateField('rights');
+                    populateField('type');
+                    populateField('format');
+                    populateField('coverage');
+                    populateField('identifier');
+
+                    xmlTextarea.value = ""; // Clear previous content
+                };
+
+                reader.readAsText(file);
+            }
+        }
+
+        function populateField(elementName) {
+             const element = xmlDoc.querySelector(elementName);
+            //const element = xmlDoc.querySelector(""+"title");
+            console.log(element);
+            if (element) {
+                document.getElementById(elementName).value = element.textContent;
+            }
+        }
+
+        function editXML() {
+            updateXmlField('title');
+            updateXmlField('creator');
+            updateXmlField('contributor');
+            updateXmlField('date');
+            updateXmlField('relation');
+            updateXmlField('language');
+            updateXmlField('source');
+            updateXmlField('subject');
+            updateXmlField('description');
+            updateXmlField('publisher');
+            updateXmlField('rights');
+            updateXmlField('type');
+            updateXmlField('format');
+            updateXmlField('coverage');
+            updateXmlField('identifier');
+
+            document.getElementById('xmlTextarea').value = xmlDoc.documentElement.outerHTML;
+        }
+
+        function updateXmlField(elementName) {
+            const element = xmlDoc.querySelector(`rdf\\:RDF > rdf\\:Description > dc\\:${elementName}`);
+            if (element) {
+                element.textContent = document.getElementById(elementName).value;
+            }
+        }
+
+        function saveXML() {
+            const xmlContent = new XMLSerializer().serializeToString(xmlDoc);
+            const blob = new Blob([xmlContent], { type: 'text/xml' });
+
+            const a = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            a.href = url;
+            a.download = 'edited-dublin-core.xml';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
