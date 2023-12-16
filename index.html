@@ -39,6 +39,12 @@
             padding: 10px;
             font-family: sans-serif;
         }
+
+        .reference-text {
+            font-size: 12px;
+            margin-top: 5px;
+            color: #666;
+        }
     </style>
 </head>
 
@@ -121,13 +127,15 @@
         <input type="text" id="identifier">
     </div>
 
-    <button onclick="editXML()">Edit XML</button>
+    <button onclick="editXML()">Render XML</button>
     <button onclick="saveXML()">Save XML</button>
 
     <div>
         <label for="xmlTextarea" style="color: #900">output</label>
         <textarea id="xmlTextarea" rows="20" cols="80" style="color: #900"></textarea>
     </div>
+
+    <div class="reference-text">This tool was build for the digital archive at weißensee school of art and design berlin, 2023, by tomek_n  </div>
 
     <script>
         let xmlDoc;
