@@ -2,6 +2,8 @@
 
 A simple HTML + js based XML file editor for Dublin Core Metadata. Just open the html file in your browser and you are ready to go. You can load, edit, and save XML files. In the repo you will find an XML sample file with no entries, and an XML pre-set file with some random presets as an example. <br>
 
+<img width="906" alt="screenshot" src="https://github.com/tomekness/dublinCore_xml_editor/assets/7965124/ede4d87f-f8c0-461f-9ba4-a1c8b5cadb8c">
+
 This tool was built for the digtial archive at the weißensee school of Art and design berlin, in 2023. 
 
 > The Dublin Core, also known as the Dublin Core Metadata Element Set (DCMES), is a set of fifteen main metadata items for describing digital or physical resources. <br>
