@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dublin Core XML Editor</title>
     <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+
         label {
             display: block;
             margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 2px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            font-family: sans-serif;
+        }
+
+        textarea#xmlTextarea {
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 5px;
+            padding: 10px;
+            font-family: sans-serif;
         }
     </style>
 </head>
+
 <body>
     <input type="file" id="fileInput" accept=".xml">
     <button onclick="loadXML()">Load XML</button>
@@ -94,7 +125,8 @@
     <button onclick="saveXML()">Save XML</button>
 
     <div>
-        <textarea id="xmlTextarea" rows="20" cols="80"></textarea>
+        <label for="xmlTextarea" style="color: #900">output</label>
+        <textarea id="xmlTextarea" rows="20" cols="80" style="color: #900"></textarea>
     </div>
 
     <script>
@@ -112,8 +144,6 @@
                 reader.onload = function (e) {
                     const xmlContent = e.target.result;
                     xmlDoc = new DOMParser().parseFromString(xmlContent, 'application/xml');
-
-                    console.log(xmlDoc.children[0].children[0]);
 
                     populateField('title');
                     populateField('creator');
@@ -134,14 +164,12 @@
                     xmlTextarea.value = ""; // Clear previous content
                 };
 
-                reader.readAsText(file);
+                reader.readAsText(file, 'UTF-8'); // Specify the encoding here
             }
         }
 
         function populateField(elementName) {
-             const element = xmlDoc.querySelector(elementName);
-            //const element = xmlDoc.querySelector(""+"title");
-            console.log(element);
+            const element = xmlDoc.querySelector(elementName);
             if (element) {
                 document.getElementById(elementName).value = element.textContent;
             }
@@ -168,7 +196,7 @@
         }
 
         function updateXmlField(elementName) {
-            const element = xmlDoc.querySelector(`rdf\\:RDF > rdf\\:Description > dc\\:${elementName}`);
+            const element = xmlDoc.querySelector(elementName);
             if (element) {
                 element.textContent = document.getElementById(elementName).value;
             }
@@ -189,4 +217,5 @@
         }
     </script>
 </body>
+
 </html>
