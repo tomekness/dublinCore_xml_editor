@@ -127,15 +127,16 @@
         <input type="text" id="identifier">
     </div>
 
-    <button onclick="editXML()">Render XML</button>
-    <button onclick="saveXML()">Save XML</button>
+    <button onclick="editXML()" id="renderButton" disabled>Render XML</button>
+    <button onclick="saveXML()" id="saveButton" disabled>Save XML</button>
 
     <div>
         <label for="xmlTextarea" style="color: #900">output</label>
         <textarea id="xmlTextarea" rows="20" cols="80" style="color: #900"></textarea>
     </div>
 
-    <div class="reference-text">This tool was build for the digital archive at weißensee school of art and design berlin, 2023, by tomek_n  </div>
+    <div class="reference-text">This tool was build for the digital archive at weißensee school of art and design
+        berlin, 2023, by tomek_n </div>
 
     <script>
         let xmlDoc;
@@ -143,6 +144,8 @@
         function loadXML() {
             const fileInput = document.getElementById('fileInput');
             const xmlTextarea = document.getElementById('xmlTextarea');
+            const renderButton = document.getElementById('renderButton');
+            const saveButton = document.getElementById('saveButton');
 
             const file = fileInput.files[0];
 
@@ -170,6 +173,10 @@
                     populateField('identifier');
 
                     xmlTextarea.value = ""; // Clear previous content
+
+                    // Enable the buttons after loading XML
+                    renderButton.disabled = false;
+                    saveButton.disabled = false;
                 };
 
                 reader.readAsText(file, 'UTF-8'); // Specify the encoding here
