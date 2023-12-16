@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+     <rdf:Description>
+          <dc:title></dc:title>
+          <dc:creator></dc:creator>
+          <dc:contributor></dc:contributor>
+          <dc:date></dc:date>
+          <dc:relation></dc:relation>
+          <dc:language></dc:language>
+          <dc:source></dc:source>
+          <dc:subject></dc:subject>
+          <dc:description></dc:description>
+          <dc:publisher></dc:publisher>
+          <dc:rights></dc:rights>
+          <dc:type></dc:type>
+          <dc:format></dc:format>
+          <dc:coverage></dc:coverage>
+          <dc:identifier></dc:identifier>
+     </rdf:Description>
+</rdf:RDF>
