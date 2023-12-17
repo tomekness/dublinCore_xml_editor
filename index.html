@@ -13,7 +13,7 @@
 
         label {
             display: block;
-            margin-top: 20px;
+            margin-top: 25px;
             margin-bottom: 5px;
         }
 
@@ -22,13 +22,13 @@
             width: 100%;
             padding: 2px;
             box-sizing: border-box;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
             font-family: sans-serif;
         }
 
         button {
             padding: 10px;
-            margin-top: 10px;
+            margin-top: 15px;
             font-family: sans-serif;
         }
 
@@ -38,6 +38,13 @@
             margin-top: 5px;
             padding: 10px;
             font-family: sans-serif;
+        } 
+       
+       .note {
+            font-size: 12px;
+            color: #666;
+            margin-left: 3px;
+            margin-bottom: 5px;
         }
 
         .reference-text {
@@ -45,6 +52,7 @@
             margin-top: 5px;
             color: #666;
         }
+       
     </style>
 </head>
 
@@ -55,76 +63,91 @@
     <div>
         <label for="title">Title:</label>
         <input type="text" id="title">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="creator">Creator:</label>
         <input type="text" id="creator">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="contributor">Contributor:</label>
         <input type="text" id="contributor">
+        <!--<span class="note">you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="date">Date:</label>
         <input type="text" id="date">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="relation">Relation:</label>
         <input type="text" id="relation">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="language">Language:</label>
         <input type="text" id="language">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="source">Source:</label>
         <input type="text" id="source">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="subject">Subject:</label>
         <input type="text" id="subject">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="description">Description:</label>
         <textarea id="description" rows="4" cols="50"></textarea>
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="publisher">Publisher:</label>
         <input type="text" id="publisher">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="rights">Rights:</label>
         <input type="text" id="rights">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="type">Type:</label>
         <input type="text" id="type">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="format">Format:</label>
         <input type="text" id="format">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="coverage">Coverage:</label>
         <input type="text" id="coverage">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <div>
         <label for="identifier">Identifier:</label>
         <input type="text" id="identifier">
+        <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
     <button onclick="editXML()" id="renderButton" disabled>Render XML</button>
