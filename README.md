@@ -6,6 +6,8 @@ A simple HTML + js based XML file editor for Dublin Core Metadata. Just open the
 
 This tool was built for the digital archive at the _weißensee_ School of Art and Design Berlin, in 2023. (https://kh-berlin.de/) 
 
+_tested in OSX (Chrome, Safari, Firefox)_
+
 > The Dublin Core, also known as the Dublin Core Metadata Element Set (DCMES), is a set of fifteen main metadata items for describing digital or physical resources. <br>
 > ### Dublin Core Metadata Element Set
 >    1. Contributor – "An entity responsible for making contributions to the resource". 
