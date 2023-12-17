@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+     <rdf:Description>
+          <dc:title>your title goes here</dc:title>
+          <dc:creator></dc:creator>
+          <dc:contributor></dc:contributor>
+          <!-- you could as well have comments in your file --> 
+          <!-- they will be as well saved in the output file : ) -->
+          <!-- that might come in handy if you have som references or explanation you want to pass on -->
+          <dc:date>2023-12</dc:date>
+          <dc:relation></dc:relation>
+          <dc:language>eng</dc:language>
+          <dc:source></dc:source>
+          <dc:subject></dc:subject>
+          <dc:description></dc:description>
+         <!-- and just some more comments here -->
+          <dc:publisher>maybe you have some preset values here as well</dc:publisher>
+          <dc:rights>and probably here </dc:rights>
+          <dc:type></dc:type>
+          <dc:format></dc:format>
+          <dc:coverage></dc:coverage>
+          <dc:identifier></dc:identifier>
+     </rdf:Description>
+</rdf:RDF>
