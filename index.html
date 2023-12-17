@@ -52,7 +52,11 @@
             margin-top: 5px;
             color: #666;
         }
-       
+       /* add this class to the labels and fields you don't want user to change*/ 
+       .doNotChange {
+        color: #999;
+       } 
+
     </style>
 </head>
 
@@ -61,8 +65,8 @@
     <button onclick="loadXML()">Load XML</button>
 
     <div>
-        <label for="title">Title:</label>
-        <input type="text" id="title">
+        <label  for="title">Title:</label>
+        <input  type="text" id="title">
         <!--<span class="note"> you can optional add notes underneth</span>-->
     </div>
 
