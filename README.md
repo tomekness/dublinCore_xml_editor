@@ -40,6 +40,3 @@ Expressing Simple Dublin Core in RDF/XML --> https://www.dublincore.org/specific
 A Dublin Core XML file generator --> https://nsteffel.github.io/dublin_core_generator/generator_nq.html
 
 Another nice (general purpose) XML editor --> https://github.com/lalitbhagtani/web-xml-editor
-
-
-https://nsteffel.github.io/dublin_core_generator/generator_nq.html
