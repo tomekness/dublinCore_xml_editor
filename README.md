@@ -1,10 +1,12 @@
 #  XML file editor for DublinCore Metadata (html + js)
 
-A simple HTML + js based XML file editor for Dublin Core Metadata. Just open the html file in your browser and you are ready to go. You can load, edit, and save XML files. In the repo you will find an XML sample file with no entries, and an XML pre-set file with some random presets as an example. <br>
+A simple HTML + js based XML file editor for Dublin Core Metadata. Just open the html file in your browser and you are ready to go. You can load, edit, and save XML files. In the repo you will find an XML sample file with no entries, and an XML pre-set file with some random presets as an example. <br> 
 
 <img width="906" alt="screenshot" src="https://github.com/tomekness/dublinCore_xml_editor/assets/7965124/ede4d87f-f8c0-461f-9ba4-a1c8b5cadb8c">
 
 This tool was built for the digital archive at the _weißensee_ School of Art and Design Berlin, in 2023. (https://kh-berlin.de/) 
+
+see it up running here: https://tomekness.github.io/dublinCore_xml_editor/  <br>
 
 _[stitched together with the help of GPT-3.5 language model]_ <br>
 _[tested on OSX (Chrome, Safari, Firefox)]_
